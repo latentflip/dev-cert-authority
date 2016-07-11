@@ -29,7 +29,7 @@ module.exports = function (host) {
   }
 
   return {
-    key: certKeyPath,
-    cert: certCrtPath
+    key: Fs.readFileSync(certKeyPath),
+    cert: Fs.readFileSync(certCrtPath)
   };
 };
