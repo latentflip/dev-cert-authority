@@ -1,0 +1,12 @@
+{
+  "name": "dev-cert-authority",
+  "version": "0.0.0",
+  "description": "Sign certs for development",
+  "main": "sign-cert.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": "./bin/dev-cert-authority",
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+if (process.argv[2] === 'install') {
+  console.log('Installing cert');
+  require('../commands/install');
+  process.exit(0);
+}
+
+console.log('Dev Cert Authority');
+console.log('Available commands:');
+console.log('  * install - install the CA');
+console.log('  * instructions - instructions for how to install the CA cert');
