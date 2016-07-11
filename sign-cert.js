@@ -20,7 +20,7 @@ module.exports = function (host) {
   const subj = `/C=US/ST=AK/L=Anchorage/O=npm-dev-cert-authority/OU=npm-module/CN=${host}`;
 
   try {
-    Fs.accessSync(certKeyPath, FS.constants.F_OK);
+    Fs.statSync(certKeyPath);
   } catch (err) {
     CP.execSync(`openssl genrsa -out ${certKeyPath} 2048`);
     CP.execSync(`openssl req -new -key ${certKeyPath} -out ${certCsrPath} -subj "${subj}"`);
