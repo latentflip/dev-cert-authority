@@ -1,10 +1,9 @@
 {
   "name": "dev-cert-authority",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Sign certs for development",
   "main": "sign-cert.js",
-  "scripts": {
-  },
+  "scripts": {},
   "bin": "./bin/dev-cert-authority",
   "author": "",
   "license": "ISC"
