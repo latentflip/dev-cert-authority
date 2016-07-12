@@ -1,12 +1,31 @@
 #!/usr/bin/env node
 
-if (process.argv[2] === 'install') {
-  console.log('Installing cert');
-  require('../commands/install');
+const Fs = require('fs');
+const Path = require('path');
+
+const commands = Fs.readdirSync(Path.join(__dirname, '../commands'))
+                   .map((name) => name.replace(/.js$/, ''));
+
+const command = process.argv[2] || 'help';
+
+if (process.argv[2] === 'generate') {
+  if (!process.argv[3]) {
+    console.log('dev-cert-authority generate <domain> - domain is required');
+    process.exit(1);
+  }
+  require('../commands/generate')(process.argv[3]);
   process.exit(0);
 }
 
-console.log('Dev Cert Authority');
-console.log('Available commands:');
-console.log('  * install - install the CA');
-console.log('  * instructions - instructions for how to install the CA cert');
+if (process.argv[2] === 'paths' || process.argv[2] === 'path') {
+  if (!process.argv[3]) {
+    console.log('dev-cert-authority paths <domain> [<type>] - domain is required');
+    process.exit(1);
+  }
+  require('../commands/paths')(process.argv[3], process.argv[4]);
+  process.exit(0);
+}
+
+if (commands.indexOf(command) > -1) {
+  require(`../commands/${command}`);
+}
