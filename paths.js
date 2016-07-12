@@ -11,11 +11,11 @@ Paths.caKeyPath = `${Paths.configDir}/rootCA.key`;
 Paths.caPemPath =  `${Paths.configDir}/rootCA.pem`;
 
 Paths.normalizeHost = function (host) {
-  return host.replace(/^\*\./, 'wild');
+  return host.replace(/^\*\./, 'wild.');
 };
 
 Paths.denormalizeHost = function (host) {
-  return host.replace(/^wild./, '*.');
+  return host.replace(/^wild\./, '*.');
 };
 
 Paths.makeCertPaths = function (host) {
