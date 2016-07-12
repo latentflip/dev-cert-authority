@@ -8,6 +8,8 @@ const AppPaths = require('./paths');
 
 module.exports = function (host) {
 
+  Mkdirp(AppPaths.hostsDir);
+
   const certPaths = AppPaths.makeCertPaths(host);
 
   const subj = `/C=US/ST=AK/L=Anchorage/O=npm-dev-cert-authority/OU=npm-module/CN=${host}`;
