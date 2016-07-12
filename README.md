@@ -67,6 +67,7 @@ const fs = require('fs');
 const https = require('https');
 const express = require('express');
 const app = express();
+const tlsOptions = require('dev-cert-authority')('awesomeapp.dev');
 
 https.createServer(tlsOptions, app)
      .listen(55555);
