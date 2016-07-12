@@ -106,6 +106,6 @@ Considerations:
 
 * **NEVER USE THIS IN PRODUCTION** you should never be asking anyone else to install your CA certs, and the certs you generate should only be used for development.
 * Don't share your CA cert or domain certs with anybody else. There's no need to copy certs into repos for shared projects, as the `dev-cert-authority` commands will pick up each user's own certs.
-* Where possible, avoid generating certificates, and adding `/etc/hosts` entries for "real" domains. I would suggest using `.dev` domains for development.
+* Where possible, avoid generating certificates, and adding `/etc/hosts` entries for "real" domains. I would suggest using something like `.test` or `.dev` domains for development (though apparently google bought `.dev`, sigh).
 
 
