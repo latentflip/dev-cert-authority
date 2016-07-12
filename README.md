@@ -108,4 +108,6 @@ Considerations:
 * Don't share your CA cert or domain certs with anybody else. There's no need to copy certs into repos for shared projects, as the `dev-cert-authority` commands will pick up each user's own certs.
 * Where possible, avoid generating certificates, and adding `/etc/hosts` entries for "real" domains. I would suggest using something like `.test` or `.dev` domains for development (though apparently google bought `.dev`, sigh).
 
+# License
 
+MIT
