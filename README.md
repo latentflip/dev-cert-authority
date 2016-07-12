@@ -1,6 +1,4 @@
-# 🔐 Dev Cert. Authority 🔐
-
-All green, all the time.
+# 💚🔒 Dev Cert. Authority
 
 Sometimes you need/want to run services locally with https. You can do this with self-signed certs, but it's annoying as you have to constantly force your browser to accept them, and if they're api services, sometimes ssl failures can cause ajax requests to confusingly fail.
 
