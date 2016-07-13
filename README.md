@@ -18,7 +18,7 @@ To install the CA, you have to generate it's certificates, and install them in y
 
 Say you want to run a service locally on the domain: `awesomeapp.dev`, you need to do three things:
 
-### 1. Configure `/etc/hosts` or similar, to point the domain `awesomeapp.dev to `localhost`
+### 1. Configure `/etc/hosts` or similar, to point the domain `awesomeapp.dev` to `localhost`
 
 On OSX/linux this typically involves adding the following line to `/etc/hosts`
 
