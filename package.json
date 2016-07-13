@@ -1,6 +1,6 @@
 {
   "name": "dev-cert-authority",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Sign certs for development",
   "main": "sign-cert.js",
   "scripts": {},
