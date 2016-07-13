@@ -6,6 +6,8 @@ const Fs = require('fs');
 
 const AppPaths = require('./paths');
 
+const Log = require('./log');
+
 module.exports = function (host) {
 
   Mkdirp(AppPaths.hostsDir);
@@ -16,11 +18,14 @@ module.exports = function (host) {
 
   try {
     Fs.statSync(certPaths.key);
+    Log.ok(`Cert for ${host} already exists`);
   } catch (err) {
-    CP.execSync(`openssl genrsa -out ${certPaths.key} 2048`);
-    CP.execSync(`openssl req -new -key ${certPaths.key} -out ${certPaths.csr} -subj "${subj}"`);
-    CP.execSync(`openssl x509 -req -in ${certPaths.csr} -CA ${AppPaths.caPemPath} -CAkey ${AppPaths.caKeyPath} -CAcreateserial -out ${certPaths.crt} -days 500 -sha256`);
+    Log.wait(`Generating certificates for ${host}`);
+    CP.execSync(`openssl genrsa -out ${certPaths.key} 2048 2>/dev/null`);
+    CP.execSync(`openssl req -new -key ${certPaths.key} -out ${certPaths.csr} -subj "${subj}" 2>/dev/null`);
+    CP.execSync(`openssl x509 -req -in ${certPaths.csr} -CA ${AppPaths.caPemPath} -CAkey ${AppPaths.caKeyPath} -CAcreateserial -out ${certPaths.crt} -days 500 -sha256 2>/dev/null`);
     CP.execSync(`rm ${certPaths.csr}`);
+    Log.success(`Cert for ${host} created!`);
   }
 
   return {

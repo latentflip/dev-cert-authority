@@ -1,7 +1,7 @@
-const signCert = require('../sign-cert');
+const SignCert = require('../sign-cert');
+const Log = require('../log');
 
 module.exports = function (domain) {
-  signCert(domain);
-  console.log(`Cert for ${domain} created:`);
+  SignCert(domain);
   require('./paths')(domain);
 };

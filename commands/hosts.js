@@ -14,5 +14,3 @@ module.exports = function () {
          .join('\n')
   );
 };
-
-module.exports();

@@ -10,8 +10,8 @@ This module makes it really easy to create your own certificate authority, and s
 To install the CA, you have to generate it's certificates, and install them in your OS.
 
 1. `npm install -g dev-cert-authority` - install the module globally with npm
-2. `dev-cert-authority install` - creates a cert in `~/.dev-cert-authority`
-3. Follow the instructions to install the cert in your OS
+2. `dev-cert-authority install` - creates a cert in `~/.dev-cert-authority` and tries to install it in your OS
+3. (If the auto-install failed, then manually follow the instructions to install the cert in your OS)
 
 
 ## Generating a certificate for a domain

@@ -31,7 +31,6 @@ Paths.makeCertPaths = function (host) {
 
 Paths.certExists = function (host) {
 
-  Fs.statSync(Paths.makeCertPaths(host).key);
   try {
     Fs.statSync(Paths.makeCertPaths(host).key);
     return true;

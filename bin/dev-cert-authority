@@ -27,5 +27,5 @@ if (process.argv[2] === 'paths' || process.argv[2] === 'path') {
 }
 
 if (commands.indexOf(command) > -1) {
-  require(`../commands/${command}`);
+  require(`../commands/${command}`).apply(null, process.argv.slice(3));
 }
