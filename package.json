@@ -8,6 +8,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "colors": "^1.1.2"
+    "colors": "^1.1.2",
+    "mkdirp": "^0.5.1",
+    "user-home": "^2.0.0"
   }
 }
