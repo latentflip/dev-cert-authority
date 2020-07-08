@@ -10,7 +10,7 @@ const Log = require('./log');
 
 module.exports = function (host) {
 
-  Mkdirp(AppPaths.hostsDir);
+  Mkdirp.sync(AppPaths.hostsDir);
 
   const certPaths = AppPaths.makeCertPaths(host);
 
